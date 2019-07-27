@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-blue">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/" (click)="setPageTitle('Blogger')">
+      <img src="assets/images/logo.jpg" alt="Angular Project" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/" routerLinkActive="active" class="nav-link" (click)="setPageTitle('Blogger')">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/about" routerLinkActive="active" class="nav-link" (click)="setPageTitle('About')">About</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/gallery" routerLinkActive="active" class="nav-link" (click)="setPageTitle('Gallery')">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/shop" routerLinkActive="active" class="nav-link" (click)="setPageTitle('Shop')">Shop</a>
+          </li>
+        <li class="nav-item">
+          <a routerLink="/page/services" routerLinkActive="active" class="nav-link" (click)="setPageTitle('Services')">Services</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="setPageTitle('Contact')">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/blog" routerLinkActive="active" class="nav-link">Blog</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav  ml-auto">
+          <li class="nav-item">
+              <a routerLink="/register" routerLinkActive="active" class="nav-link" (click)="setPageTitle('Register')">Sign Up</a>
+            </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+            <a routerLink="/login" class="nav-link">Login</a>
+          </li>
+         <li>
+            <a routerLink="/cart" class="nav-link"><span class="icon-shopping_cart"></span>Cart[0]</a>
+          </li>
+          <li>
+            <a routerLink="/checkout" class="nav-link"><span class="icon-shopping_cart"></span>Checkout</a>
+          </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a routerLink="/admin" class="nav-link">Admin Dashboard</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+            <a routerLink="/login" class="nav-link">Logout</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
